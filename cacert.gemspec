@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["git@JustinLove.name"]
   gem.description   = %q{Packages a snapshort of the Curl cacert.pem}
   gem.summary       = %q{Packages the SSL certificate bundle from http://curl.haxx.se/docs/caextract.html into a gem for use in Ruby applications.}
-  gem.homepage      = "git@github.com:JustinLove/cacert.git"
+  gem.homepage      = "https://github.com/JustinLove/cacert"
 
   gem.name          = "cacert"
   gem.require_paths = ["lib"]
