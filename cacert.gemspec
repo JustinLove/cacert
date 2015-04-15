@@ -12,7 +12,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Cacert::VERSION
   gem.licenses      = ['MPL 1.1', 'GPL 2.0', 'LGPL 2.1']
-
   gem.files         = <<MANIFEST.split("\n")
 Gemfile
 Rakefile
@@ -23,5 +22,5 @@ MANIFEST
   gem.test_files    = <<TEST_MANIFEST.split("\n")
 test/cacert_test.rb
 TEST_MANIFEST
-  
+
 end
