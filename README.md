@@ -20,6 +20,11 @@ Or install it yourself as:
 
 Call `Cacert.pem` to get the fully qualified path where `cacert.pem` resides.
 
+
+or
+
+Call `Cacert.set_in_env` to set the SSL_CERT_FILE environment variable.
+
 ## Contributing
 
 1. Fork it
