@@ -1,26 +1,27 @@
-# -*- encoding: utf-8 -*-
-require File.expand_path('../lib/cacert/version', __FILE__)
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'cacert/version'
 
-Gem::Specification.new do |gem|
-  gem.authors       = ["Justin Love"]
-  gem.email         = ["git@JustinLove.name"]
-  gem.description   = %q{Packages a snapshort of the Curl cacert.pem}
-  gem.summary       = %q{Packages the SSL certificate bundle from http://curl.haxx.se/docs/caextract.html into a gem for use in Ruby applications.}
-  gem.homepage      = "https://github.com/JustinLove/cacert"
+Gem::Specification.new do |spec|
+  spec.name          = "cacert"
+  spec.authors       = ["Justin Love"]
+  spec.version       = Cacert::VERSION
+  spec.email         = ["git@JustinLove.name"]
 
-  gem.name          = "cacert"
-  gem.require_paths = ["lib"]
-  gem.version       = Cacert::VERSION
-  gem.licenses      = ['MPL 1.1', 'GPL 2.0', 'LGPL 2.1']
-  gem.files         = <<MANIFEST.split("\n")
-Gemfile
-Rakefile
-lib/cacert.rb
-lib/cacert/version.rb
-share/cacert.pem
-MANIFEST
-  gem.test_files    = <<TEST_MANIFEST.split("\n")
-test/cacert_test.rb
-TEST_MANIFEST
+  spec.description   = %q{Packages a snapshort of the Curl cacert.pem}
+  spec.summary       = %q{Packages the SSL certificate bundle from http://curl.haxx.se/docs/caextract.html into a gem for use in Ruby applications.}
+  spec.homepage      = "https://github.com/JustinLove/cacert"
+  spec.licenses      = ['MPL 1.1', 'GPL 2.0', 'LGPL 2.1']
 
+  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir        = "exe"
+  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
+  spec.add_development_dependency "bundler", "~> 1.12"
+  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'httparty'
 end
