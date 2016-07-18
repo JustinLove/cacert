@@ -3,7 +3,7 @@ require "cacert/version"
 module Cacert
   # Returns the directory containing the cacert.pem file.
   def self.share_dir
-    File.join(File.dirname(__FILE__), '..')
+    File.expand_path('../share', __dir__)
   end
 
   # Returns the path of the embedded cacert.pem SSL certificates file.
